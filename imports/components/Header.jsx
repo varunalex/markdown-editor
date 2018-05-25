@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import Accounts from './Accounts.jsx';
 
 export default class Header extends Component {
+  onCreateMD(e) {
+    e.preventDefault();
+
+    Meteor.call('markdown.insert');
+  }
   render () {
     return (
       <nav className="nav navbar-default">
@@ -13,7 +18,7 @@ export default class Header extends Component {
             <Accounts />
           </li>
           <li>
-            <a href="">Create Markdown</a>
+            <a href="" onClick={this.onCreateMD.bind(this)}>Create Markdown</a>
           </li>
         </ul>
       </nav>
