@@ -9,6 +9,9 @@ Meteor.methods({
       sharedWith: [],
       ownerId: this.userId
     });
+  },
+  'markdown.remove': function(markdown) {
+    return MarkDowns.remove(markdown);
   }
 });
 
